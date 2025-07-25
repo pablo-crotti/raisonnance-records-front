@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(328 100% 54%),
+    hsl(328 100% 74%)
+  );
+
+  --color-primary: hsl(328 100% 54%);
+
+  --color-background-dark: hsl(0, 0%, 11%);
+  --color-background-light: hsl(0 0% 90%);
+}
+
+@theme inline {
+  --color-background-dark: hsl(240 10% 4%);
+  --color-background-light: hsl(240 10% 96%);
+
+  --color-background-highlight-dark: hsl(0, 0%, 7%);
+  --color-background-highlight-light: hsl(0, 0%, 93%);
+
+  --color-background-highlight-more-dark: hsl(0, 0%, 14%);
+  --color-background-highlight-more-light: hsl(0, 0%, 86%);
+
+  --color-foreground-dark: hsl(0 0% 98%);
+  --color-foreground-light: hsl(240 10% 3.9%);
+
+  /* --color-dark: #212121; */
+  /* --color-light: #efefef; */
+
+  --color-primary-400: #ec4ac9;
+  --color-primary-500: #f03fcb;
+  --color-primary-600: #db3cb9;
+
+  --color-primary: hsl(328 100% 54%);
+  --color-primary-highlight: hsl(328 100% 74%);
+  --shadow-glow-primary: 0 0 20px hsl(328 100% 54% / 0.5);
+
+  --color-card: hsl(240 10% 3.9%);
+}
+
+.react-toast {
+  padding: 2rem 30px;
+  /* width: max-content; */
+  background-color: var(--color-background-highlight-more-light);
+  color: var(--color-foreground-light);
+
+  @variant dark {
+    background-color: var(--color-background-highlight-more-dark);
+    color: var(--color-foreground-dark);
+  }
+}
+
+.react-toast button svg {
+  fill: var(--color-foreground-light);
+  @variant dark {
+    fill: var(--color-foreground-dark);
+  }
+}

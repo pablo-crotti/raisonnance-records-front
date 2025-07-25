@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "dashboard": "Tableau de bord",
+    "services": "Services",
+    "content": "Contenu"
+  },
+  "auth": {
+    "sign_in": "Connexion",
+    "logout": "Déconnexion",
+    "forgot_password": "Mot de passe oublié ?"
+  },
+  "labels": {
+    "mail": "Email",
+    "password": "Mot de passe"
+  },
+  "placeholders": {
+    "mail": "ton@email.ch"
+  },
+  "errors": {
+    "sign_in": "Erreur lors de la connexion",
+    "server": "Erreur serveur, veuillez essayer plus tard",
+
+    "mail": {
+      "required": "L'adresse email est requise",
+      "invalid": "Cette adresse email n'est pas valide"
+    },
+
+    "password": {
+      "required": "Le mot de passe est requis",
+      "invalid": "Le mot de passe n'est pas conforme"
+    },
+
+    "auth": {
+      "invalid": "Les informations de connexion sont erronées",
+      "pending": "Vous devez valider votre addresse mail pour vous connecter, nous vous avons envoyé un email",
+      "suspended": "Votre compte a été suspendu"
+    },
+    "user_service": {
+      "service_type_id_required": "Le type de service est requis",
+      "service_type_id_unknown": "Type de service sélectionné inconnu",
+
+      "title_required": "Le titre est requis",
+      "title_unique": "Ce titre existe déjà",
+      "title_min": "Le titre doit comporter au moins 2 caractères",
+      "title_max": "Le titre ne peut pas contenir plus que 80 caractères",
+
+      "description_required": "La description est requise",
+      "description_min": "La description doit comporter au moins 100 caractères",
+      "description_max": "La description ne peut pas contenir plus que 80 caractères",
+
+      "response_time_hours_required": "Le temps de réponse est requis",
+      "response_time_hours_integer": "Le format du temps de réponse n'est pas conforme",
+      "response_time_hours_min": "Le temps de réponse doit être au moins de 24 heures",
+      "response_time_hours_max": "Le temps de réponse ne peut pas dépasser une semaine",
+
+      "booking_deadline_required": "Le délai de réservation est requis",
+      "booking_deadline_integer": "Le format du délai de réservation n'est pas conforme",
+      "booking_deadline_min": "Le délai de réservation ne peut pas être inférieur à un jour"
+    },
+    "pricing": {
+      "pricing_type_required": "Le type de tarification est requis",
+      "pricing_type_invalid": "Le type de tarification sélectionné est invalide",
+
+      "duration_hours_integer": "Le format de la durée est invalide",
+      "duration_hours_min": "La durée minimale est d'une heure",
+      "duration_hours_max": "La durée ne peut pas dépasser 24 heures",
+      "duration_hours_required": "En cas de tarif fixe, la durée est requise",
+
+      "min_duration_hours_integer": "Le format de la durée minimale est invalide",
+      "min_duration_hours_min": "La durée minimale doit être d'au moins une heure",
+      "min_duration_hours_max": "La durée minimale ne peut pas dépasser 24 heures",
+      "min_duration_hours_required": "En cas de tarif horaire, la durée minimale est requise",
+
+      "max_duration_hours_integer": "Le format de la durée maximale est invalide",
+      "max_duration_hours_min": "La durée maximale doit être d'au moins une heure",
+      "max_duration_hours_max": "La durée maximale ne peut pas dépasser 24 heures",
+      "max_duration_hours_required": "En cas de tarif horaire, la durée maximale est requise",
+
+      "price_required": "Le prix est requis",
+      "price_numeric": "Le prix doit être un nombre",
+      "price_invalid_format": "Le prix doit avoir au maximum deux décimales et ne pas dépasser 8 chiffres avant la virgule",
+      "price_min": "Le prix ne peut pas être inférieur à 5 CHF",
+
+      "depends_on_service_duration_boolean": "Le champ dépend du service doit être un booléen",
+      "is_active_boolean": "Le champ actif doit être un booléen"
+    }
+  },
+  "success": {
+    "user_service": {
+      "created": "Service crée avec succès"
+    }
+  },
+  "404": {
+    "page_not_found": "Oops! Cette page n'existe pas",
+    "back_home": "Retour à l'accueil"
+  },
+  "pages": {
+    "content": {
+      "service_types": "Types de services"
+    }
+  }
+}

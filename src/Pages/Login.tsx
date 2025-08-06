@@ -61,7 +61,7 @@ export default function Login() {
           loading ? "border-primary/30" : "border-primary shadow-glow-primary"
         }`}
       >
-        {loading && <InlineLoader />}
+        {loading && <InlineLoader color="neon-pink" />}
         <div className="p-8">
           <h2
             className={`text-2xl font-bold mb-6 text-center ${

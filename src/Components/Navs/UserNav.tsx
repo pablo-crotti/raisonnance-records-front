@@ -68,76 +68,81 @@ const Navigation = () => {
   if (!isVisible) return null;
 
   return (
-    <nav
-      className="fixed w-full md:w-max md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 z-40 md:bg-background-light/80 md:dark:bg-background-dark/80 md:backdrop-blur-md md:border md:border-neon-purple/30 rounded-full md:px-6 md:py-3 transition-all duration-300"
-      ref={mobileMenuRef}
-    >
-      <ul className="space-x-6 hidden md:flex">
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <button
-              onClick={() => scrollToSection(item.id)}
-              className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 animated-underline ${
-                activeSection === item.id
-                  ? "text-primary"
-                  : "text-foreground-light dark:text-foreground-dark hover:text-neon-blue"
-              }`}
-            >
-              {item.label}
-            </button>
-          </li>
-        ))}
-      </ul>
-      <div
-        className={`md:hidden flex flex-col ${
-          menuOpen
-            ? "bg-background-light/80 dark:bg-background-dark/80 border-b border-neon-purple/30 backdrop-blur-md"
-            : ""
-        }`}
+    <>
+      <nav
+        className="fixed w-full md:w-max md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 z-40 md:bg-background-light/80 md:dark:bg-background-dark/80 md:backdrop-blur-md md:border md:border-neon-purple/30 rounded-full md:px-6 md:py-3 transition-all duration-300"
+        ref={mobileMenuRef}
       >
-        <div className="px-6 py-3">
-          <button
-            className="flex flex-col justify-center items-center w-10 h-10"
-            aria-label="Open navigation menu"
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span
-              className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light my-1 transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </button>
+        <ul className="space-x-6 hidden md:flex">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                onClick={() => scrollToSection(item.id)}
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 animated-underline ${
+                  activeSection === item.id
+                    ? "text-primary"
+                    : "text-foreground-light dark:text-foreground-dark hover:text-neon-blue"
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <div
+          className={`md:hidden flex flex-col ${
+            menuOpen
+              ? "bg-background-light/80 dark:bg-background-dark/80 border-b border-neon-purple/30 backdrop-blur-md"
+              : ""
+          }`}
+        >
+          <div className="px-3 py-3">
+            <button
+              className="flex bg-background-dark rounded-lg flex-col justify-center items-center w-10 h-10"
+              aria-label="Open navigation menu"
+              onClick={() => setMenuOpen((open) => !open)}
+            >
+              <span
+                className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light transition-all duration-300 ${
+                  menuOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light my-1 transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-0.5 w-6 bg-background-dark dark:bg-background-light transition-all duration-300 ${
+                  menuOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              />
+            </button>
+          </div>
+          {menuOpen && (
+            <ul className="py-4 text-center">
+              {navItems.map((item) => (
+                <li key={item.id} className="mb-4">
+                  <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`relative px-6 rounded-md py-2 border font-medium transition-colors duration-300 animated-underline ${
+                      activeSection === item.id
+                        ? "bg-primary border-primary"
+                        : "text-foreground-light dark:text-foreground-dark hover:bg-neon-blue hover:border-neon-blue"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-        {menuOpen && (
-          <ul className="py-4 text-center">
-            {navItems.map((item) => (
-              <li key={item.id} className="mb-4">
-                <button
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-6 rounded-md py-2 border font-medium transition-colors duration-300 animated-underline ${
-                    activeSection === item.id
-                      ? "bg-primary border-primary"
-                      : "text-foreground-light dark:text-foreground-dark hover:bg-neon-blue hover:border-neon-blue"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </nav>
+      </nav>
+      {menuOpen && (
+        <div className="block w-screen h-screen z-10 bg-background-dark/10 backdrop-blur-xs fixed top-0 left-0"></div>
+      )}
+    </>
   );
 };
 

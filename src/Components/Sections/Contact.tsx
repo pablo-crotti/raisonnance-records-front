@@ -7,22 +7,36 @@ import InlineLoader from "../Loaders/InlineLoader";
 
 interface ContactProps {
   selectedPack: string;
+  selectedArtists: boolean;
+  unsetPack: () => void;
+  unsetArtists: () => void;
 }
 
-const Contact = ({ selectedPack }: ContactProps) => {
+const Contact = ({
+  selectedPack,
+  selectedArtists,
+  unsetPack,
+  unsetArtists,
+}: ContactProps) => {
   const [selectData, setSelectData] = useState({
     type: "",
     pack: "",
   });
 
   useEffect(() => {
-    const type = selectedPack ? "event" : "";
-    setSelectData({ ...selectData, pack: selectedPack, type: type });
+    const type = selectedPack ? "event" : selectData.type || "";
+    setSelectData({ pack: selectedPack, type: type });
   }, [selectedPack]);
 
   useEffect(() => {
     if (selectData.type != "event") setSelectData({ ...selectData, pack: "" });
+    if (selectedPack && selectData.type != "event") unsetPack();
+    if (selectedArtists && selectData.type != "artists") unsetArtists();
   }, [selectData.type]);
+
+  useEffect(() => {
+    if (selectedArtists) setSelectData({ type: "artist", pack: "" });
+  }, [selectedArtists]);
 
   const [errors, setErrors] = useState({
     fullname: "",

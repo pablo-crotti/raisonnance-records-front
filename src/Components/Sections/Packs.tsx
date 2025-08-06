@@ -16,11 +16,11 @@ interface Data {
   label: string;
 }
 
-interface PackProps {
+interface PacksProps {
   selectPack: (pack: string) => void;
 }
 
-const Packs = ({ selectPack }: PackProps) => {
+const Packs = ({ selectPack }: PacksProps) => {
   const packs: Data[] = [
     {
       title: "Pack Essentiel",

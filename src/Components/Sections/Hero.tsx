@@ -26,7 +26,7 @@ const Hero = ({ scrollTo }: HeroProps) => {
   return (
     <section
       id="home"
-      className="min-h-screen flex flex-col items-center justify-start relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-start relative"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-background-light via-background-light to-background-light/90 dark:from-background-dark dark:via-background-dark dark:to-background-dark/90" />
 

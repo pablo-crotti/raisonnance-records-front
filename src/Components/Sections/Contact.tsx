@@ -315,7 +315,7 @@ const Contact = ({
               </h3>
 
               <div className="space-y-3 text-foreground-dark">
-                <p>📧 contact@raisonnance-record.ch</p>
+                <p>📧 contact@raisonance-record.ch</p>
                 <p>📍 Suisse Romande</p>
               </div>
             </div>

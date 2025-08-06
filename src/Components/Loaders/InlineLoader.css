@@ -1,17 +1,14 @@
 .loader {
   display: block;
-  --height-of-loader: 4px;
-  --loader-color: #0071e2;
   width: 100%;
-  height: var(--height-of-loader);
   border-radius: 30px;
   position: relative;
+  height: 4px;
 }
 
 .loader::before {
   content: "";
   position: absolute;
-  background: var(--color-neon-pink);
   opacity: 0.3;
   top: 0;
   left: 0;

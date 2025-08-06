@@ -40,10 +40,10 @@ const InputText = ({
         disabled={disabled}
         required={required}
         autoComplete={autocomplete ? autocomplete : "off"}
-        className={`w-full  px-4 py-4 border dark:disabled:text-neutral-400 rounded-lg  outline-none transition-all ${
+        className={`w-full px-4 py-4 border dark:disabled:text-neutral-400 rounded-lg  outline-none transition-all ${
           error
             ? "not-disabled:border-red-500 not-disabled:text-red-500"
-            : "text-foreground-light dark:text-foreground-dark  border-primary/30 focus:border-primary focus:ring-primary focus:shadow-glow-primary"
+            : "text-foreground-light dark:text-foreground-dark  border-neon-purple/30 focus:border-neon-purple focus:ring-neon-purple focus:shadow-glow-purple"
         }`}
         placeholder={placeholder}
       />

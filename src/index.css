@@ -36,8 +36,34 @@
   --color-primary: hsl(328 100% 54%);
   --color-primary-highlight: hsl(328 100% 74%);
   --shadow-glow-primary: 0 0 20px hsl(328 100% 54% / 0.5);
+  --shadow-glow-pink: 0 0 20px hsl(328 100% 54% / 0.5);
+  --shadow-glow-blue: 0 0 20px hsl(194 100% 50% / 0.5);
+  --shadow-glow-purple: 0 0 20px hsl(271 91% 65% / 0.5);
+  --shadow-glow-green: 0 0 20px hsl(141 76% 48% / 0.5);
 
-  --color-card: hsl(240 10% 3.9%);
+  --color-neon-pink: hsl(328 100% 54%);
+  --color-neon-blue: hsl(194 100% 50%);
+  --color-neon-purple: hsl(271 91% 65%);
+  --color-neon-green: hsl(141 76% 48%);
+  --color-neon-yellow: hsl(54 100% 62%);
+  --color-neon-orange: hsl(33 100% 50%);
+
+  --color-gradient-retro: linear-gradient(
+    135deg,
+    hsl(328 100% 54%),
+    hsl(271 91% 65%),
+    hsl(194 100% 50%)
+  );
+}
+
+.font-retro {
+  font-family: "Orbitron", "Space Mono", monospace;
+  font-style: italic;
+}
+
+.font-disco {
+  font-family: "Righteous", "Bebas Neue", cursive;
+  letter-spacing: 0.1em;
 }
 
 .react-toast {
@@ -57,4 +83,124 @@
   @variant dark {
     fill: var(--color-foreground-dark);
   }
+}
+
+.pulse-neon {
+  animation: pulse-neon 2s infinite;
+}
+
+@keyframes pulse-neon {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.8;
+    filter: brightness(1.2);
+  }
+}
+
+.gradient-retro {
+  background: linear-gradient(
+    135deg,
+    hsl(328 100% 54%),
+    hsl(271 91% 65%),
+    hsl(194 100% 50%)
+  );
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    135deg,
+    hsl(328 100% 54%),
+    hsl(271 91% 65%),
+    hsl(194 100% 50%)
+  );
+  transform-origin: left;
+  z-index: 1000;
+}
+
+.neon-glow-primary {
+  box-shadow: 0 0 20px hsl(328 100% 54% / 0.5);
+  text-shadow: 0 0 20px hsl(328 100% 54% / 0.5);
+}
+
+.neon-glow-blue {
+  box-shadow: 0 0 20px hsl(194 100% 50% / 0.5);
+  text-shadow: 0 0 20px hsl(194 100% 50% / 0.5);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px hsl(271 91% 65% / 0.5);
+  text-shadow: 0 0 20px hsl(271 91% 65% / 0.5);
+}
+
+.neon-glow-green {
+  box-shadow: 0 0 20px hsl(141 76% 48% / 0.5);
+  text-shadow: 0 0 20px hsl(141 76% 48% / 0.5);
+}
+
+.neon-glow-pink-hover:hover {
+  box-shadow: 0 0 20px hsl(328 100% 54% / 0.5);
+  text-shadow: 0 0 20px hsl(328 100% 54% / 0.5);
+}
+
+.neon-glow-pink-hover:disabled {
+  box-shadow: 0 0 0 hsl(328 100% 54% / 0.5);
+  text-shadow: 0 0 0 hsl(328 100% 54% / 0.5);
+}
+
+.neon-glow-blue-hover:hover {
+  box-shadow: 0 0 20px hsl(194 100% 50% / 0.5);
+  text-shadow: 0 0 20px hsl(194 100% 50% / 0.5);
+}
+
+.neon-glow-blue-hover:disabled {
+  box-shadow: 0 0 0 hsl(194 100% 50% / 0.5);
+  text-shadow: 0 0 0 hsl(194 100% 50% / 0.5);
+}
+
+.neon-glow-purple-hover:hover {
+  box-shadow: 0 0 20px hsl(271 91% 65% / 0.5);
+  text-shadow: 0 0 20px hsl(271 91% 65% / 0.5);
+}
+
+.neon-glow-purple-hover:disabled {
+  box-shadow: 0 0 0 hsl(271 91% 65% / 0.5);
+  text-shadow: 0 0 0 hsl(271 91% 65% / 0.5);
+}
+
+.neon-glow-green-hover:hover {
+  box-shadow: 0 0 20px hsl(141 76% 48% / 0.5);
+  text-shadow: 0 0 20px hsl(141 76% 48% / 0.5);
+}
+
+.neon-glow-green-hover:disabled {
+  box-shadow: 0 0 0 hsl(141 76% 48% / 0.5);
+  text-shadow: 0 0 0 hsl(141 76% 48% / 0.5);
+}
+
+.neon-glow-yellow-hover:hover {
+  box-shadow: 0 0 20px hsl(54 100% 62% / 0.5);
+  text-shadow: 0 0 20px hsl(54 100% 62% / 0.5);
+}
+.neon-glow-yellow-hover:disabled {
+  box-shadow: 0 0 0 hsl(54 100% 62% / 0.5);
+  text-shadow: 0 0 0 hsl(54 100% 62% / 0.5);
+}
+
+.neon-glow-orange-hover:hover {
+  box-shadow: 0 0 20px hsl(33 100% 50% / 0.5);
+  text-shadow: 0 0 20px hsl(33 100% 50% / 0.5);
+}
+
+.neon-glow-orange-hover:disabled {
+  box-shadow: 0 0 0 hsl(33 100% 50% / 0.5);
+  text-shadow: 0 0 0 hsl(33 100% 50% / 0.5);
 }

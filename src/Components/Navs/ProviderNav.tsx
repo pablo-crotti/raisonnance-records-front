@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { AuthUser } from "../../models/Auth";
-import UserNav from "./UserNav";
+import Account from "./Account";
 
 const LINKS = [
   {
@@ -64,7 +64,7 @@ const ProviderNav = ({ user }: ProviderNavProps) => {
           }`}
         />
       </button>
-      <UserNav user={user} />
+      <Account user={user} />
 
       <div className="hidden lg:block border shadow-md border-primary/30 hover:border-primary w-max rounded-full px-6 py-4 hover:shadow-glow-primary duration-300">
         <ul className="flex items-center space-x-6">

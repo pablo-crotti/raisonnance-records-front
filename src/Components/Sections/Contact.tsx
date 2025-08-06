@@ -186,7 +186,7 @@ const Contact = ({
             </span>
           </h2>
 
-          <p className="text-center text-foreground-light dark:text-foreground-dark mb-16 text-lg">
+          <p className="text-center text-foreground mb-16 text-lg">
             Prêt à faire vibrer votre événement ? Contactez-nous !
           </p>
         </div>
@@ -314,7 +314,7 @@ const Contact = ({
                 Informations
               </h3>
 
-              <div className="space-y-3 text-foreground-dark">
+              <div className="space-y-3 text-foreground">
                 <p>📧 contact@raisonance-record.ch</p>
                 <p>📍 Suisse Romande</p>
               </div>

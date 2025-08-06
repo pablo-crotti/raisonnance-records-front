@@ -16,19 +16,19 @@ const Button = ({
   return (
     <button
       disabled={disabled}
-      className={`border-2 px-4 w-full disabled:opacity-50 disabled:hover:text-foreground-dark rounded-xl font-bold py-2 cursor-pointer transition-all duation-300${
+      className={`border-2 px-4 w-full text-foreground disabled:opacity-50 disabled:hover:text-foreground rounded-xl font-bold py-2 cursor-pointer transition-all duation-300${
         color == "neon-blue"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-blue-hover  border-neon-blue hover:text-neon-blue"
+          ? "neon-glow-blue-hover  border-neon-blue hover:text-neon-blue"
           : color == "neon-pink"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-pink-hover  border-neon-pink hover:text-neon-pink"
+          ? "neon-glow-pink-hover  border-neon-pink hover:text-neon-pink"
           : color == "neon-purple"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-purple-hover  border-neon-purple hover:text-neon-purple"
+          ? "neon-glow-purple-hover  border-neon-purple hover:text-neon-purple"
           : color == "neon-green"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-green-hover  border-neon-green hover:text-neon-green"
+          ? "neon-glow-green-hover  border-neon-green hover:text-neon-green"
           : color == "neon-yellow"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-yellow-hover  border-neon-yellow hover:text-neon-yellow"
+          ? "neon-glow-yellow-hover  border-neon-yellow hover:text-neon-yellow"
           : color == "neon-orange"
-          ? "text-foreground-light dark:text-foreground-dark neon-glow-orange-hover  border-neon-orange hover:text-neon-orange"
+          ? "neon-glow-orange-hover  border-neon-orange hover:text-neon-orange"
           : ""
       }`}
       onClick={onClick}

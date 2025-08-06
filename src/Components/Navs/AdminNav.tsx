@@ -68,14 +68,14 @@ const AdminNav = () => {
           <a
             key={item.label}
             href={`/admin/sudo/${item.path}`}
-            className={`absolute w-12 h-12 rounded-full cursor-pointer  border border-primary flex justify-center items-center shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl ${
+            className={`absolute w-12 h-12 rounded-full cursor-pointer  border border-neon-pink flex justify-center items-center shadow-lg transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl ${
               isOpen
                 ? "opacity-100 pointer-events-auto"
                 : "opacity-0 pointer-events-none scale-50"
             } ${
               item.paths.includes(pathname)
-                ? "bg-primary text-foreground-dark"
-                : "bg-background-highlight-light dark:bg-background-highlight-dark text-primary"
+                ? "bg-neon-pink text-foreground"
+                : "bg-background-highlight text-neon-pink"
             }`}
             style={{
               transform: isOpen
@@ -90,7 +90,7 @@ const AdminNav = () => {
         );
       })}
       <button
-        className="w-14 h-14 flex justify-center items-center rounded-full shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-primary-highlight hover:from-primary/90 hover:to-primary-highlight/90 text-foreground-dark"
+        className="w-14 h-14 flex justify-center items-center rounded-full shadow-xl transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-r from-neon-pink to-neon-pink/20 hover:from-neon-pink/90 hover:to-neon-pink/90 text-foreground"
         onClick={toggleMenu}
         id="admin-nav"
         aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}

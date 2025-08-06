@@ -55,19 +55,19 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex-col bg-background-light dark:bg-background-dark flex items-center justify-center p-4">
+    <div className="min-h-screen flex-col bg-background flex items-center justify-center p-4">
       <div
         className={`max-w-md w-full backdrop-blur-sm bg-card-/50 border rounded-xl overflow-hidden ${
-          loading ? "border-primary/30" : "border-primary shadow-glow-primary"
+          loading
+            ? "border-neon-pink/30"
+            : "border-neon-pink shadow-glow-neon-pink"
         }`}
       >
         {loading && <InlineLoader color="neon-pink" />}
         <div className="p-8">
           <h2
             className={`text-2xl font-bold mb-6 text-center ${
-              loading
-                ? "text-foreground-light/50 dark:text-foreground-dark/50"
-                : "text-foreground-light dark:text-foreground-dark"
+              loading ? "text-foreground/50" : "text-foreground"
             }`}
           >
             {t("auth.sign_in")}
@@ -99,7 +99,7 @@ export default function Login() {
             <div className="flex items-center justify-end mb-8">
               <a
                 href="#"
-                className="text-sm text-primary hover:text-primary/80"
+                className="text-sm text-neon-pink hover:text-neon-pink/80"
               >
                 {t("auth.forgot_password")}
               </a>

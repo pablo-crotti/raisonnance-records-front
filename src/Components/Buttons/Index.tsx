@@ -21,7 +21,7 @@ const Button = ({
     return (
       <a
         href={href}
-        className="w-full block cursor-pointer disabled:border-foreground-light/50 dark:disabled:border-foreground-dark/50 disabled:text-foreground-light/50 dark:disabled:text-foreground-dark/50 border border-foreground-light/90 dark:border-foreground-dark/90 hover:border-primary hover:shadow-glow-primary text-foreground-light/90 dark:text-foreground-dark/90 hover:text-primary font-medium py-4 rounded-lg transition-colors text-bold"
+        className="w-full block cursor-pointer  disabled:border-foreground/50 disabled:text-foreground/50 border border-foreground/90 hover:border-neon-pink hover:shadow-glow-neon-pink text-foreground/90 hover:text-neon-pink font-medium py-4 rounded-lg transition-colors text-bold"
       >
         {children}
       </a>
@@ -33,7 +33,7 @@ const Button = ({
       onClick={onClick}
       type={type}
       disabled={disabled}
-      className="w-full cursor-pointer disabled:border-foreground-light/50 dark:disabled:border-foreground-dark/50 disabled:text-foreground-light/50 dark:disabled:text-foreground-dark/50 border border-foreground-light/90 dark:border-foreground-dark/90 hover:border-primary hover:shadow-glow-primary text-foreground-light/90 dark:text-foreground-dark/90 hover:text-primary font-medium py-4 rounded-lg transition-colors text-bold"
+      className="w-full cursor-pointer  disabled:border-foreground/50 disabled:text-foreground/50 border border-foreground/90 hover:border-neon-pink hover:shadow-glow-neon-pink text-foreground/90 hover:text-neon-pink font-medium py-4 rounded-lg transition-colors text-bold"
     >
       {children}
     </button>

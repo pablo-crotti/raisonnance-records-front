@@ -31,7 +31,7 @@ const Account = ({ user }: AccountProps) => {
     <>
       <button
         onClick={toggleMenu}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col justify-center items-center bg-gradient-to-r from-primary to-primary-highlight hover:from-primary/90 hover:to-primary-highlight/90 cursor-pointer duration-300 rounded-full w-10 h-10 text-foreground-dark font-bold uppercase"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-40 flex flex-col justify-center items-center bg-gradient-to-r from-neon-pink to-neon-pink-highlight hover:from-neon-pink/90 hover:to-neon-pink-highlight/90 cursor-pointer duration-300 rounded-full w-10 h-10 text-foreground font-bold uppercase"
       >
         {user.name.split(" ").length > 1
           ? `${user.name.split(" ")[0].substring(0, 1)}${user.name
@@ -41,7 +41,7 @@ const Account = ({ user }: AccountProps) => {
       </button>
 
       <div
-        className={`absolute right-4 top-18 bg-background-highlight-light text-foreground-light overflow-hidden dark:text-foreground-dark transition-all duration-300 ease-in-out dark:bg-background-highlight-dark border-4 border-primary/30  z-30 py-4 px-8 ${
+        className={`absolute right-4 top-18 overflow-hidden text-foreground transition-all duration-300 ease-in-out bg-background-highlight border-4 border-neon-pink/30  z-30 py-4 px-8 ${
           isOpen ? "opacity-100" : "opacity-0"
         }`}
         style={{
@@ -56,12 +56,12 @@ const Account = ({ user }: AccountProps) => {
           <p className="text-base">{user.email}</p>
         </div>
         <ul className="mt-4">
-          <li className="border-b  border-foreground-light/40 dark:border-foreground-dark/40 text-foreground-light/70 dark:text-foreground-dark/70 hover:text-foreground-light dark:hover:text-foreground-dark duration-300 mb-2 py-2">
+          <li className="border-b  border-foreground/40 text-foreground/70 hover:text-foreground duration-300 mb-2 py-2">
             <a className="w-full block" href="#">
               Compte
             </a>
           </li>
-          <li className=" text-foreground-light/70 dark:text-foreground-dark/70 hover:text-foreground-light dark:hover:text-foreground-dark duration-300  mb-2 py-2 ">
+          <li className="text-foreground/70 hover:text-foreground duration-300  mb-2 py-2 ">
             <button
               onClick={lgOut}
               className="w-full block  text-left cursor-pointer"

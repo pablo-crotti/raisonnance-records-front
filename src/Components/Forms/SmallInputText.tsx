@@ -29,7 +29,7 @@ const SmallInputText = ({
               ? "text-neutral-400"
               : error
               ? "text-red-500"
-              : "text-neutral-700 dark:text-neutral-300"
+              : "text-neutral-700 text-neutral-300"
           }`}
         >
           {label}
@@ -47,7 +47,7 @@ const SmallInputText = ({
           className={`w-full text-sm text-start px-4 py-2 border disabled:opacity-50 rounded-lg  outline-none transition-all ${
             error
               ? "not-disabled:border-red-500 not-disabled:text-red-500"
-              : "text-foreground-light dark:text-foreground-dark  dark:border-foreground-dark/30 focus:border-neon-purple focus:ring-neon-purple focus:shadow-glow-purple"
+              : "text-foreground  border-foreground/30 focus:border-neon-purple focus:ring-neon-purple focus:shadow-glow-purple"
           }`}
         />
       ) : (
@@ -61,7 +61,7 @@ const SmallInputText = ({
           className={`w-full text-sm text-start px-4 py-2 border disabled:opacity-50 rounded-lg  outline-none transition-all ${
             error
               ? "not-disabled:border-red-500 not-disabled:text-red-500"
-              : "text-foreground-light dark:text-foreground-dark  dark:border-foreground-dark/30 focus:border-neon-purple focus:ring-neon-purple focus:shadow-glow-purple"
+              : "text-foreground  border-foreground/30 focus:border-neon-purple focus:ring-neon-purple focus:shadow-glow-purple"
           }`}
         />
       )}

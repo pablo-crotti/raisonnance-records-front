@@ -28,7 +28,7 @@ const Hero = ({ scrollTo }: HeroProps) => {
       id="home"
       className="min-h-screen flex flex-col items-center justify-start relative"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-background-light via-background-light to-background-light/90 dark:from-background-dark dark:via-background-dark dark:to-background-dark/90" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/90" />
 
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
@@ -45,15 +45,15 @@ const Hero = ({ scrollTo }: HeroProps) => {
       <div className="relative flex flex-col pt-20  h-full justify-start z-10 text-center max-w-4xl mx-auto px-4">
         <Logo />
 
-        <p className="text-xl md:text-2xl text-foreground-light dark:text-foreground-dark mb-12 font-light tracking-wide">
+        <p className="text-xl md:text-2xl  text-foreground mb-12 font-light tracking-wide">
           Donnez du son à vos plus grands moments
         </p>
 
-        <h1 className="text-foreground-dark text-2xl font-bold mb-8">
+        <h1 className="text-foreground text-2xl font-bold mb-8">
           Non, un câble jack et une playlist Spotify ne font pas l'affaire.
         </h1>
         <div
-          className="text-foreground-dark text-xl leading-relaxed space-y-2"
+          className="text-foreground text-xl leading-relaxed space-y-2"
           ref={ref}
         >
           <p>
@@ -73,13 +73,13 @@ const Hero = ({ scrollTo }: HeroProps) => {
                 : "max-h-0 opacity-0 -translate-y-4"
             }`}
           >
-            <p className="text-foreground-dark text-xl leading-relaxed mb-4">
+            <p className="text-foreground text-xl leading-relaxed mb-4">
               C'est pourquoi nous vous accompagnons dans la création
               d'événements sur mesure, avec un son de qualité professionnelle,
               une ambiance parfaitement maîtrisée, et des solutions techniques
               adaptées à vos besoins.
             </p>
-            <p className="text-foreground-dark text-xl leading-relaxed">
+            <p className="text-foreground text-xl leading-relaxed">
               Du lancement de produit à l'inauguration, en passant par les
               soirées privées ou les actions marketing, nous créons une ambiance
               sonore à la hauteur de votre image.
@@ -91,7 +91,7 @@ const Hero = ({ scrollTo }: HeroProps) => {
             onClick={() => setOpen(!open)}
           >
             <PlusIcon
-              className={`transition-all hover:cursor-pointer text-foreground-dark/50 hover:text-foreground-dark duration-300 ${
+              className={`transition-all hover:cursor-pointer text-foreground/50 hover:text-foreground duration-300 ${
                 open ? "rotate-45" : "rotate-0"
               }`}
             />
@@ -104,14 +104,6 @@ const Hero = ({ scrollTo }: HeroProps) => {
             text="Découvrir nos packs"
           />
         </div>
-
-        {/* <div className="flex justify-center">
-          <div className="animate-bounce">
-            <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
-            </div>
-          </div>
-        </div> */}
       </div>
 
       <div className="absolute bottom-10 left-10 w-4 h-4 bg-neon-green rounded-full neon-glow-green animate-pulse" />

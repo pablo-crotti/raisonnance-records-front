@@ -29,7 +29,7 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
   const ListIcon = data.listIcon ?? X;
   return (
     <div
-      className={`group p-8 bg-background-light/50 dark:bg-background-dark/50 backdrop-blur-sm border rounded-2xl transition-all duration-300 hover:scale-105 ${
+      className={`group p-8 bg-background/50 backdrop-blur-sm border rounded-2xl transition-all duration-300 hover:scale-105 ${
         data.color == "neon-blue"
           ? "border-neon-blue/30 hover:border-neon-blue neon-glow-blue-hover"
           : data.color == "neon-pink"
@@ -48,7 +48,7 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
       {data.annotation && (
         <div className="absolute -top-5 left-0 w-full flex justify-center">
           <span
-            className={`px-4 py-2 font-bold rounded-full uppercase text-foreground-light ${
+            className={`px-4 py-2 font-bold rounded-full uppercase  ${
               data.color == "neon-blue"
                 ? "bg-neon-blue"
                 : data.color == "neon-pink"
@@ -151,12 +151,10 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
         </h3>
       )}
 
-      <p className="text-foreground-light dark:text-foreground-dark leading-relaxed">
-        {data.description}
-      </p>
+      <p className="text-foreground leading-relaxed">{data.description}</p>
 
       {data.list && (
-        <ul className="text-foreground-light dark:text-foreground-dark mt-8 space-y-4 mb-8">
+        <ul className="text-foreground mt-8 space-y-4 mb-8">
           {data.list.map((l, index) => (
             <li className="flex gap-4 " key={index}>
               <span>

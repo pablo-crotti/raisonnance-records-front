@@ -66,7 +66,7 @@ const Options = () => {
   return (
     <section
       id="options"
-      className="py-20 px-4 bg-gradient-to-br from-background-light via-background-light/5 to-background-light dark:from-background-dark dark:via-background-dark/5 dark:to-background-dark"
+      className="py-20 px-4 bg-gradient-to-br from-background via-background/5 to-background"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="font-disco text-4xl md:text-6xl text-center mb-4">
@@ -75,7 +75,7 @@ const Options = () => {
           </span>
         </h2>
 
-        <p className="text-center text-foreground-light dark:text-foreground-dark mb-16 text-lg">
+        <p className="text-center text-foreground mb-16 text-lg">
           Services complémentaires pour une expérience unique
         </p>
 

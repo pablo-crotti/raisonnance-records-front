@@ -54,12 +54,12 @@ const Artists = ({ selectArtists }: ArtistsProps) => {
     <section id="artists" className="py-20 px-4 ">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-disco text-4xl md:text-6xl text-center mb-4">
-          <span className="bg-gradient-to-br from-primary via-neon-purple to-neon-blue bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-neon-pink via-neon-purple to-neon-blue bg-clip-text text-transparent">
             Artistes
           </span>
         </h2>
 
-        <p className="text-center text-foreground-light dark:text-foreground-dark mb-16 text-lg">
+        <p className="text-center text-foreground mb-16 text-lg">
           Rejoignez notre label et bénéficiez d'un accompagnement complet pour
           développer votre carrière artistique
         </p>

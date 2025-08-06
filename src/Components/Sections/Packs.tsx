@@ -83,7 +83,7 @@ const Packs = ({ selectPack }: PacksProps) => {
           </span>
         </h2>
 
-        <p className="text-center text-foreground-light dark:text-foreground-dark mb-16 text-lg">
+        <p className="text-center text-foreground mb-16 text-lg">
           Choisissez la formule qui correspond à vos besoins
         </p>
 

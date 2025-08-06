@@ -64,7 +64,7 @@ const Content = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-8 text-foreground-light dark:text-foreground-dark">
+    <div className="flex flex-col items-center gap-8 text-foreground">
       {elements.map((element) => {
         const Icon = element.icon;
         const selected = selectedBlock == element.label;
@@ -86,9 +86,7 @@ const Content = () => {
           >
             <div
               className={`group-hover:text-${element.color} ${
-                selected
-                  ? `text-${element.color}`
-                  : `text-foreground-light dark:text-foreground-dark `
+                selected ? `text-${element.color}` : `text-foreground `
               }`}
             >
               <span

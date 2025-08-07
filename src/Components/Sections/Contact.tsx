@@ -263,6 +263,7 @@ const Contact = ({
                     error={errors.fullname}
                     placeholder="Votre nom"
                     disabled={loading}
+                    required={true}
                   />
                 </div>
 
@@ -274,10 +275,16 @@ const Contact = ({
                     type="text"
                     placeholder="Votre email"
                     disabled={loading}
+                    required={true}
                   />
                 </div>
                 <div>
-                  <SmallInputPhone name={"phone"} error={errors.phone} />
+                  <SmallInputPhone
+                    name={"phone"}
+                    error={errors.phone}
+                    disabled={loading}
+                    required={true}
+                  />
                 </div>
 
                 <div>
@@ -311,6 +318,7 @@ const Contact = ({
                     placeholder="Votre message"
                     type="textarea"
                     disabled={loading}
+                    required={true}
                   />
                 </div>
 

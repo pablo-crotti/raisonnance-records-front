@@ -4,6 +4,7 @@ import Button from "../Button";
 import Select from "../Forms/Select";
 import SmallInputText from "../Forms/SmallInputText";
 import InlineLoader from "../Loaders/InlineLoader";
+import SmallInputPhone from "../Forms/SmallInputPhone";
 
 interface ContactProps {
   selectedPack: string;
@@ -41,10 +42,14 @@ const Contact = ({
   const [errors, setErrors] = useState({
     fullname: "",
     email: "",
+    phone: "",
     type: "",
     pack: "",
     message: "",
   });
+
+  const [serverError, setServerError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -61,7 +66,7 @@ const Contact = ({
     { label: "Pack Expérience", value: "pack_exp" },
   ];
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const textData = new FormData(e.currentTarget);
@@ -70,10 +75,13 @@ const Contact = ({
     const err = {
       fullname: "",
       email: "",
+      phone: "",
       type: "",
       pack: "",
       message: "",
     };
+
+    setServerError("");
 
     if (!data.fullname) {
       err.fullname = "Veuillez indiquer votre nom complet";
@@ -89,6 +97,22 @@ const Contact = ({
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.toLocaleString())
     ) {
       err.email = "Format d'email invalide";
+    }
+
+    if (!data.phone) {
+      err.phone = "Veuillez indiquer votre numéro de téléphone";
+    } else {
+      let cleanedPhone = data.phone.toLocaleString().replace(/[^\d]/g, "");
+
+      if (cleanedPhone.startsWith("41")) {
+        cleanedPhone = cleanedPhone.slice(2);
+      }
+
+      if (cleanedPhone.startsWith("0")) {
+        err.phone = "Le numéro ne doit pas commencer par 0";
+      } else if (cleanedPhone.length !== 9) {
+        err.phone = "Le numéro doit contenir exactement 9 chiffres";
+      }
     }
 
     if (!data.message) {
@@ -110,7 +134,14 @@ const Contact = ({
     }
     setErrors(err);
 
-    if (err.fullname || err.email || err.type || err.pack || err.message) {
+    if (
+      err.fullname ||
+      err.email ||
+      err.phone ||
+      err.type ||
+      err.pack ||
+      err.message
+    ) {
       return;
     }
 
@@ -119,40 +150,54 @@ const Contact = ({
     const formData = {
       fullname: data.fullname.toLocaleString(),
       email: data.email.toLocaleString().toLocaleLowerCase(),
+      phone: data.phone.toLocaleString(),
       type: selectData.type,
       pack: selectData.pack,
       message: data.message.toLocaleString(),
     };
 
-    console.log(formData);
+    try {
+      const response = await fetch(
+        "https://contact.raisonance-record.ch/contact.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-    setLoading(false);
-
-    // const Da
-
-    // Simple form validation
-    // if (
-    //   !formData.name ||
-    //   !formData.email ||
-    //   !formData.type ||
-    //   !formData.message
-    // ) {
-    //   // toast({
-    //   //   title: "Erreur",
-    //   //   description: "Veuillez remplir tous les champs",
-    //   //   variant: "destructive",
-    //   // });
-    //   return;
-    // }
-
-    // Simulate form submission
-    // toast({
-    //   title: "Message envoyé !",
-    //   description: "Nous vous répondrons dans les plus brefs délais.",
-    // });
-
-    // Reset form
-    // setFormData({ fullname: "", email: "", type: "", pack: "", message: "" });
+      await response.json();
+      if (!response.ok) {
+        if (response.status === 500) {
+          setServerError("Erreur serveur, veuillez réessayer plus tard.");
+        } else if (response.status === 400) {
+          setServerError(
+            "Erreur de validation des données, veuillez vérifier vos informations."
+          );
+        } else {
+          setServerError(
+            "Une erreur inconnue est survenue, veuillez réessayer."
+          );
+        }
+      } else {
+        setSelectData({ type: "", pack: "" });
+        setErrors({
+          fullname: "",
+          email: "",
+          phone: "",
+          type: "",
+          pack: "",
+          message: "",
+        });
+        setSubmitted(true);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   // const socialLinks = [
@@ -199,76 +244,88 @@ const Contact = ({
                 // <div className="w-full neon-glow-purple before:bg-neon-purple h-1 absolute top-0 left-0 loader-line"></div>
               )}
             </div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <SmallInputText
-                  autocomplete={"fullname"}
-                  name="fullname"
-                  error={errors.fullname}
-                  placeholder="Votre nom"
+            {submitted ? (
+              <div className="text-center">
+                <h3 className="font-retro text-2xl font-bold mb-4 text-neon-purple">
+                  Merci pour votre message
+                </h3>
+                <p className="text-foreground">
+                  Nous avons bien reçu votre demande et nous vous répondrons
+                  dans les plus brefs délais.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <SmallInputText
+                    autocomplete={"fullname"}
+                    name="fullname"
+                    error={errors.fullname}
+                    placeholder="Votre nom"
+                    disabled={loading}
+                  />
+                </div>
+
+                <div>
+                  <SmallInputText
+                    autocomplete={"email"}
+                    name="email"
+                    error={errors.email}
+                    type="text"
+                    placeholder="Votre email"
+                    disabled={loading}
+                  />
+                </div>
+                <div>
+                  <SmallInputPhone name={"phone"} error={errors.phone} />
+                </div>
+
+                <div>
+                  <Select
+                    label="Type de demande"
+                    options={types}
+                    error={errors.type}
+                    selectedOption={selectData.type}
+                    select={(value) =>
+                      setSelectData({ ...selectData, type: value })
+                    }
+                    disabled={loading}
+                  />
+                </div>
+                <div>
+                  <Select
+                    label="Choisissez un pack"
+                    options={packs}
+                    error={errors.pack}
+                    disabled={selectData.type != "event" || loading}
+                    selectedOption={selectData.pack}
+                    select={(value) =>
+                      setSelectData({ ...selectData, pack: value })
+                    }
+                  />
+                </div>
+                <div>
+                  <SmallInputText
+                    name="message"
+                    error={errors.message}
+                    placeholder="Votre message"
+                    type="textarea"
+                    disabled={loading}
+                  />
+                </div>
+
+                {serverError && (
+                  <p className="text-red-500 mt-2">{serverError}</p>
+                )}
+
+                <Button
+                  type="submit"
+                  text="Envoyer"
+                  color="neon-purple"
                   disabled={loading}
                 />
-              </div>
-
-              <div>
-                <SmallInputText
-                  autocomplete={"email"}
-                  name="email"
-                  error={errors.email}
-                  type="text"
-                  placeholder="Votre email"
-                  disabled={loading}
-                />
-              </div>
-
-              <div>
-                <Select
-                  label="Type de demande"
-                  options={types}
-                  error={errors.type}
-                  selectedOption={selectData.type}
-                  select={(value) =>
-                    setSelectData({ ...selectData, type: value })
-                  }
-                  disabled={loading}
-                />
-              </div>
-              <div>
-                <Select
-                  label="Choisissez un pack"
-                  options={packs}
-                  error={errors.pack}
-                  disabled={selectData.type != "event" || loading}
-                  selectedOption={selectData.pack}
-                  select={(value) =>
-                    setSelectData({ ...selectData, pack: value })
-                  }
-                />
-              </div>
-              <div>
-                <SmallInputText
-                  name="message"
-                  error={errors.message}
-                  placeholder="Votre message"
-                  type="textarea"
-                  disabled={loading}
-                />
-              </div>
-
-              <Button
-                type="submit"
-                text="Envoyer"
-                color="neon-purple"
-                disabled={loading}
-              />
-
-              {/* <Button
-                type="submit"
-                className="w-full btn-neon-purple font-bold py-3 rounded-xl pulse-neon"
-              >
-                Envoyer
-              </Button> */}
-            </form>
+              </form>
+            )}
           </div>
 
           {/* Social Links & Info */}

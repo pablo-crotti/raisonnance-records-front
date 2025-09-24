@@ -8,21 +8,21 @@ interface HeroProps {
 }
 
 const Hero = ({ scrollTo }: HeroProps) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (ref.current && !ref.current.contains(event.target as Node)) {
-        setOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (ref.current && !ref.current.contains(event.target as Node)) {
+  //       setOpen(false);
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
   return (
     <section
       id="home"
@@ -63,7 +63,7 @@ const Hero = ({ scrollTo }: HeroProps) => {
             </span>
             , nous croyons qu'un son de qualité peut transformer un moment
             <span className="text-neon-pink"> ordinaire</span> en souvenir
-            <span className="text-neon-green"> inoubliable</span>.
+            <span className="text-neon-purple"> inoubliable</span>.
           </p>
 
           <div

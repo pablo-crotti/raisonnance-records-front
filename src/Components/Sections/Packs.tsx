@@ -1,4 +1,4 @@
-import { Check, type LucideProps } from "lucide-react";
+import { Check, X, type LucideProps } from "lucide-react";
 import Card from "../Card";
 import type { ForwardRefExoticComponent, RefAttributes } from "react";
 
@@ -9,6 +9,10 @@ interface Data {
   color: string;
   list: string[];
   listIcon: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
+  listNo?: string[];
+  listNoIcon?: ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
   >;
   button: string;
@@ -24,49 +28,66 @@ const Packs = ({ selectPack }: PacksProps) => {
   const packs: Data[] = [
     {
       title: "Pack Essentiel",
-      subTitle: "À partir de 899 CHF",
+      subTitle: "À partir de 1'199 CHF",
       description: "Idéal pour les evenements d'entreprise",
       color: "neon-blue",
       list: [
-        "Location livraison et installation sono et matériel DJ simple",
-        "Micro sans fils",
+        "Location, livraison et installation sono et matériel DJ",
         "Booking DJ sur mesure",
-        "Jusqu'à 4h de DJ set",
+        "Jusqu'à 4h de DJ set/utilisation micros",
+        "Micro sans fils",
       ],
       listIcon: Check,
+      listNo: [
+        "Installation lumières (éclairage soirée dansante)",
+        "Playlists personnalisées",
+        "Activités sonores souhaités (karaoké, blind test)",
+        "Captation vidéo et montage (after-movie)",
+        "CD/vinyle souvenir avec pochette personnalisée + bande-son gravée (discours, animations, disco...)",
+      ],
+      listNoIcon: X,
       button: "Réserver ce pack",
       label: "pack_ess",
     },
     {
       title: "Pack Ambiance",
-      subTitle: "À partir de 1699 CHF",
+      subTitle: "À partir de 2'099 CHF",
       description: "Idéal pour les mariages et anniversaires",
       color: "neon-pink",
       list: [
-        "Location, livraison et installation son et lumière",
-        "Micro sans fils",
-        "Activités sonores souhaités",
-        "Playlists personnalisées",
+        "Location, livraison et installation sono et matériel DJ",
         "Booking DJ sur mesure",
-        "Jusqu'à 6h de DJ set",
+        "Jusqu'à 4h de DJ set/utilisation micros",
+        "Micro sans fils",
+        "Installation lumières (éclairage soirée dansante)",
+        "Playlists personnalisées",
       ],
       listIcon: Check,
+      listNo: [
+        "Activités sonores souhaités (karaoké, blind test)",
+        "Captation vidéo et montage (after-movie)",
+        "CD/vinyle souvenir avec pochette personnalisée + bande-son gravée (discours, animations, disco...)",
+      ],
+      listNoIcon: X,
       button: "Réserver ce pack",
       annotation: "Populaire",
       label: "pack_amb",
     },
     {
       title: "Pack Expérience",
-      subTitle: "À partir de 2899 CHF",
+      subTitle: "À partir de 2'699 CHF",
       description: "Idéal pour un deal tout en un",
       color: "neon-purple",
       list: [
-        "Location, livraison et installation son/lumière premium",
+        "Location, livraison et installation sono et matériel DJ",
+        "Booking DJ sur mesure",
+        "Jusqu'à 4h de DJ set/utilisation micros",
         "Micro sans fils",
+        "Installation lumières (éclairage soirée dansante)",
+        "Playlists personnalisées",
         "Activités sonores souhaités (karaoké, blind test)",
-        "Booking DJs et/ou groupe live sur mesure",
-        "Captation sonore/vidéo et after-movie montage (after-movie)",
-        "Photographe et traitement des photos",
+        "Captation vidéo et montage (after-movie)",
+        "CD/vinyle souvenir avec pochette personnalisée + bande-son gravée (discours, animations, disco...)",
       ],
       listIcon: Check,
       button: "Réserver ce pack",

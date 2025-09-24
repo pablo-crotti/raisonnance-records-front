@@ -26,7 +26,7 @@ const Options = () => {
       title: "Matériel",
       description:
         "Location, livraison et installation de matériel audio et lumières",
-      color: "neon-green",
+      color: "neon-purple",
     },
     {
       icon: Cable,

@@ -8,6 +8,7 @@ interface Data {
   >;
   title: string;
   description: string;
+  subDescription?: string;
   color: string;
 }
 
@@ -16,14 +17,19 @@ const Events = () => {
     {
       icon: Building,
       title: "Service aux entreprises",
-      description: "Soupers et sorties, inauguration, évènements marketing",
+      description:
+        "Soupers et sorties d'équipe, inaugurations & lancements de produit, événements marketing & RP, valorisation de vos évènements pour les réseaux sociaux (captation sonore et vidéo)",
+      subDescription:
+        "Un service complet qui valorise votre image de marque par une ambiance cohérente",
       color: "neon-blue",
     },
     {
       icon: Heart,
       title: "Évènements privés",
       description:
-        "Mariage tout inclus (DJ, photographe, son, lumière, et même enterrement de vie de garçon/fille et voyage de noces.)",
+        "Mariages (DJ, photographe, son & lumière inclus), soirées privées & anniversaires, enterrements de vie de jeune fille/garçon & voyage de noces",
+      subDescription:
+        "Une offre tout-en-un qui vous libère l'esprit pour profiter pleinement du moment",
       color: "neon-pink",
     },
   ];

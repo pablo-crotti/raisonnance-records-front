@@ -9,9 +9,14 @@ interface Data {
   title: string;
   subTitle?: string;
   description: string;
+  subDescription?: string;
   color: string;
   list?: string[];
   listIcon?: ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
+  >;
+  listNo?: string[];
+  listNoIcon?: ForwardRefExoticComponent<
     Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>
   >;
   button?: string;
@@ -27,6 +32,8 @@ interface CardProps {
 const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
   const Icon = data.icon ?? X;
   const ListIcon = data.listIcon ?? X;
+  const ListNoIcon = data.listNoIcon ?? X;
+
   return (
     <div
       className={`group p-8 bg-background/50 backdrop-blur-sm border rounded-2xl transition-all duration-300 hover:scale-105 ${
@@ -131,7 +138,7 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
       </h3>
       {data.subTitle && (
         <h3
-          className={`font-bold mb-4 text-center text-3xl ${
+          className={`font-bold mb-4 text-center text-2xl ${
             data.color == "neon-blue"
               ? "text-neon-blue"
               : data.color == "neon-pink"
@@ -152,11 +159,16 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
       )}
 
       <p className="text-foreground leading-relaxed">{data.description}</p>
+      {data.subDescription && (
+        <p className="text-foreground leading-relaxed mt-2">
+          {data.subDescription}
+        </p>
+      )}
 
       {data.list && (
         <ul className="text-foreground mt-8 space-y-4 mb-8">
           {data.list.map((l, index) => (
-            <li className="flex gap-4 " key={index}>
+            <li className="flex items-center gap-4 " key={index}>
               <span>
                 <ListIcon
                   className={`${
@@ -179,6 +191,32 @@ const Card = ({ data, squareIcon = false, onClick }: CardProps) => {
               {l}
             </li>
           ))}
+
+          {data.listNo &&
+            data.listNo.map((l, index) => (
+              <li className="flex items-center gap-4 opacity-50 " key={index}>
+                <span>
+                  <ListNoIcon
+                    className={`${
+                      data.color == "neon-blue"
+                        ? "text-neon-blue"
+                        : data.color == "neon-pink"
+                        ? "text-neon-pink"
+                        : data.color == "neon-purple"
+                        ? "text-neon-purple"
+                        : data.color == "neon-green"
+                        ? "text-neon-green"
+                        : data.color == "neon-yellow"
+                        ? "text-neon-yellow"
+                        : data.color == "neon-orange"
+                        ? "text-neon-orange"
+                        : ""
+                    }`}
+                  />
+                </span>
+                {l}
+              </li>
+            ))}
         </ul>
       )}
 

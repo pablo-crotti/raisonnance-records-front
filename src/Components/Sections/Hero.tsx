@@ -1,6 +1,6 @@
 import { PlusIcon } from "lucide-react";
 import Logo from "../Logo/Logo";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Button from "../Button";
 
 interface HeroProps {

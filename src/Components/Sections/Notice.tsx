@@ -31,19 +31,6 @@ const Notice = () => {
             Donner mon avis
           </a>
         </div>
-
-        {/* <div className="grid md:grid-cols-4 gap-4">
-          {artists.map((artist, index) => (
-            <Card key={index} data={artist} />
-          ))}
-        </div>
-        <div className="w-max mx-auto mt-12">
-          <Button
-            text="Rejoindre le label"
-            onClick={selectArtists}
-            color="neon-blue"
-          />
-        </div> */}
       </div>
     </section>
   );

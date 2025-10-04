@@ -5,6 +5,7 @@ import Hero from "../Components/Sections/Hero";
 import Options from "../Components/Sections/Options";
 import Packs from "../Components/Sections/Packs";
 import Artists from "../Components/Sections/Artists";
+import Notice from "../Components/Sections/Notice";
 
 const Index = () => {
   const [selectedPack, setSelectedPack] = useState<string>("");
@@ -34,6 +35,7 @@ const Index = () => {
           scrollTo("contact");
         }}
       />
+      <Notice />
       <Contact
         selectedPack={selectedPack}
         selectedArtists={selectedArtists}

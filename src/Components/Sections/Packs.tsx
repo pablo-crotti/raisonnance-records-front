@@ -57,7 +57,7 @@ const Packs = ({ selectPack }: PacksProps) => {
       list: [
         "Location, livraison et installation sono et matériel DJ",
         "Booking DJ sur mesure",
-        "Jusqu'à 4h de DJ set/utilisation micros",
+        "Jusqu'à 8h de DJ set/animations",
         "Micro sans fils",
         "Installation lumières (éclairage soirée dansante)",
         "Playlists personnalisées",
@@ -81,7 +81,7 @@ const Packs = ({ selectPack }: PacksProps) => {
       list: [
         "Location, livraison et installation sono et matériel DJ",
         "Booking DJ sur mesure",
-        "Jusqu'à 4h de DJ set/utilisation micros",
+        "Durée illimitée",
         "Micro sans fils",
         "Installation lumières (éclairage soirée dansante)",
         "Playlists personnalisées",

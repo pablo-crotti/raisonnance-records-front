@@ -12,6 +12,7 @@ const Navigation = () => {
     { id: "options", label: "Options+" },
     { id: "packs", label: "Packs DJ" },
     { id: "artists", label: "Artistes" },
+    { id: "gallery", label: "Galerie" },
     { id: "contact", label: "Contact" },
   ];
 

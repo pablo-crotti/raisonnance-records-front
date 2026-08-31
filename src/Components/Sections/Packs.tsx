@@ -28,7 +28,7 @@ const Packs = ({ selectPack }: PacksProps) => {
   const packs: Data[] = [
     {
       title: "Pack Essentiel",
-      subTitle: "À partir de 1'199 CHF",
+      subTitle: "À partir de 790 CHF",
       description: "Idéal pour les evenements d'entreprise",
       color: "neon-blue",
       list: [
@@ -51,7 +51,7 @@ const Packs = ({ selectPack }: PacksProps) => {
     },
     {
       title: "Pack Ambiance",
-      subTitle: "À partir de 2'099 CHF",
+      subTitle: "À partir de 1'790 CHF",
       description: "Idéal pour les mariages et anniversaires",
       color: "neon-pink",
       list: [
@@ -75,7 +75,7 @@ const Packs = ({ selectPack }: PacksProps) => {
     },
     {
       title: "Pack Expérience",
-      subTitle: "À partir de 2'699 CHF",
+      subTitle: "À partir de 2'190 CHF",
       description: "Idéal pour un deal tout en un",
       color: "neon-purple",
       list: [

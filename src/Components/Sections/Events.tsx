@@ -18,7 +18,7 @@ const Events = () => {
       icon: Building,
       title: "Service aux entreprises",
       description:
-        "Soupers, sorties d'équipe, inaugurations & lancements de produit, événements marketing & RP, valorisation de vos évènements pour les réseaux sociaux (captation sonore et vidéo)",
+        "Soupers et sorties d'équipe, inaugurations & lancements de produit, événements marketing & RP, valorisation de vos évènements pour les réseaux sociaux (captation sonore et vidéo)",
       subDescription:
         "Un service complet qui valorise votre image de marque par une ambiance cohérente",
       color: "neon-blue",
